@@ -1,24 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="ShootingGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHp-OX-2U2">
+                                <rect key="frame" x="184" y="414" width="46" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TL4-fh-9t1"/>
+                                    <segue destination="pGm-0x-emo" kind="presentation" identifier="Game" modalPresentationStyle="fullScreen" id="0pu-br-8sh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77f-Qn-jYR">
+                                <rect key="frame" x="163.5" y="486" width="87" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Ranking">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="rankingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hC1-Rq-t5G"/>
+                                    <segue destination="pAn-GA-nmK" kind="presentation" identifier="Ranking" modalPresentationStyle="fullScreen" id="MNv-St-ozL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="リンゴ集め" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoq-Qq-d6b">
+                                <rect key="frame" x="0.0" y="194" width="414" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YET-Rj-NwJ">
+                                <rect key="frame" x="165" y="330" width="84" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YET-Rj-NwJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0xl-Bt-rdH"/>
+                            <constraint firstItem="KHp-OX-2U2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="56Z-OF-BD2"/>
+                            <constraint firstItem="qoq-Qq-d6b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="93q-oE-LSY"/>
+                            <constraint firstItem="YET-Rj-NwJ" firstAttribute="top" secondItem="qoq-Qq-d6b" secondAttribute="bottom" constant="100" id="Rot-dm-jny"/>
+                            <constraint firstItem="KHp-OX-2U2" firstAttribute="top" secondItem="YET-Rj-NwJ" secondAttribute="bottom" constant="60" id="bXt-HV-JHu"/>
+                            <constraint firstItem="qoq-Qq-d6b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f4n-GL-mbs"/>
+                            <constraint firstItem="77f-Qn-jYR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g6v-vG-Sn3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qoq-Qq-d6b" secondAttribute="trailing" id="lmJ-Bs-yAd"/>
+                            <constraint firstItem="77f-Qn-jYR" firstAttribute="top" secondItem="KHp-OX-2U2" secondAttribute="bottom" constant="30" id="qYi-4c-pY1"/>
+                            <constraint firstItem="qoq-Qq-d6b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="t12-lG-uNg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gameStartButtonOutlet" destination="KHp-OX-2U2" id="NYt-cy-e3l"/>
+                        <outlet property="rankingButtonOutlet" destination="77f-Qn-jYR" id="65M-41-Gyc"/>
+                        <outlet property="recordLabel" destination="YET-Rj-NwJ" id="N8d-lK-pih"/>
+                        <outlet property="titleLabel" destination="qoq-Qq-d6b" id="ehN-a9-qfI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="30" y="70"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="q1d-Az-tJr">
+            <objects>
+                <viewController storyboardIdentifier="Game" id="pGm-0x-emo" customClass="GameViewController" customModule="ShootingGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xwO-sc-0em" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ioD-zg-XeP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kZJ-rd-7LE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Opo-hf-Ht9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848" y="70"/>
+        </scene>
+        <!--Ranking View Controller-->
+        <scene sceneID="aWd-OL-wFV">
+            <objects>
+                <viewController storyboardIdentifier="Ranking" id="pAn-GA-nmK" customClass="RankingViewController" customModule="ShootingGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c6Y-q4-yu9" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iml-be-BMW">
+                                <rect key="frame" x="0.0" y="681" width="414" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Home"/>
+                                <connections>
+                                    <action selector="homeButton:" destination="pAn-GA-nmK" eventType="touchUpInside" id="1L1-n5-jQl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gfT-B6-y7k"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gfT-B6-y7k" firstAttribute="trailing" secondItem="iml-be-BMW" secondAttribute="trailing" id="2uL-iF-kyx"/>
+                            <constraint firstItem="iml-be-BMW" firstAttribute="centerX" secondItem="c6Y-q4-yu9" secondAttribute="centerX" id="mnO-fY-Sh3"/>
+                            <constraint firstItem="iml-be-BMW" firstAttribute="leading" secondItem="gfT-B6-y7k" secondAttribute="leading" id="psz-mA-eIE"/>
+                            <constraint firstItem="gfT-B6-y7k" firstAttribute="bottom" secondItem="iml-be-BMW" secondAttribute="bottom" constant="150" id="tO1-qJ-APz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HM6-sw-l6N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZz-8O-M7P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="747"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
